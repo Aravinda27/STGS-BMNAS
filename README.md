@@ -1,5 +1,17 @@
 # STGS-BMNAS: Straight Through Gumbel Softmax Estimator based Bimodal Neural Architecture Search for Audio-Visual Deepfake Detection
 ## International Joint Conference on Biometrics(IJCB)-2024 [[paper]](https://arxiv.org/pdf/2406.13384)
+# Architecture diagram
+<div align="center">
+  <img src="figures/architecture.jpg" alt="Image Description">
+  <p><em>Fig: Block diagram indicating the multimodal fusion network proposed by STGS-BMNAS, which consists of two level searching
+scheme. In the first level we search for features from backbone network. Each cell accepts two inputs from its previous cells. In the second
+stage we search for optimal architecture searched using our proposed STGS-BMNAS over the cells through pool primitive operations and finally
+concatenate the cell outputs for prediction.</em></p>
+</div>
+
+
+
+
 # Requriments
     python >=3.6, pytorch==1.5.0 torchvision==0.6.0
 # Datasets
@@ -24,4 +36,81 @@
      python main_darts_found_df.py --search_exp_dir=<dir of search exp> --eval_exp_dir=<dir of eval exp>
 # Roc curve calculation:
     python3 get_auc_val.py
+# Experiments
+ ## Architecture obtained for FakeAVCeleb and SWAN-DF database
+<div align="center">
+  <table>
+    <tr>
+      <td style="text-align:center">
+        <img src="figures/second.jpg" alt="Image 1" width="800" />
+        <br />
+        <em>Architecture obtained when trained on FakeAVCeleb database</em>
+      </td>
+      <td style="text-align:center">
+        <img src="figures/SWAN-DF.jpg" alt="Image 2" width="800" />
+        <br />
+        <em>Architecture obtained when trained on SWAN-DF database</em>
+      </td>
+    </tr>
+  </table>
+</div>
+
+## Architecture obtained by mixing both database
+
+<div align="center">
+  <img src="figures/epoch_0.jpg" alt="Image Description">
+  <p><em>Optimal architecture obtained with temperature λ = 10
+and sampling M=15 for second type of evaluation protocol</em></p>
+</div>
+
+## Roc curves
+
+<div align="center">
+  <table>
+    <tr>
+      <td style="text-align:center">
+        <img src="figures/auc_samp15_real.jpg" alt="Image 1" width="800" />
+        <br />
+        <em>ROC curve for Real class with constant temperature
+parameter λ = 10 and varying sampling values M</em>
+      </td>
+      <td style="text-align:center">
+        <img src="figures/auc_samp15_fake.jpg" alt="Image 2" width="800" />
+        <br />
+        <em>ROC curve for Fake class with constant temperature
+parameter λ = 10 and varying sampling values M</em>
+      </td>
+    </tr>
+  </table>
+</div>
+
+## Ablation study
+
+<div align="center">
+  <table>
+    <tr>
+      <td style="text-align:center">
+        <img src="figures/temp15_sampling5.jpg" alt="Image 1" width="800" />
+        <br />
+        <em>Architecture derived with λ=5 and M=15</em>
+      </td>
+      <td style="text-align:center">
+        <img src="figures/temp5_sampling15.jpg" alt="Image 2" width="800" />
+        <br />
+        <em>Architecture derived with λ=5 and M=5</em>
+      </td>
+    </tr>
+  </table>
+</div>
+
+## Pre-trained models
+coming soon
+
+## Pre-trained models
+coming soon
+
+
+
+
+
 

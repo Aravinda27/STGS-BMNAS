@@ -18,4 +18,10 @@
  ## First, search the hypernets. You can use --parallel for data-parallel. The default setting will require about 128GB of GPU memory, you may adjust the --batch size according to gpu memory capacity.
       python main_darts_searchable_df.py –parallel
  ## Then train the searched fusion network. You need to assign the searching experiment by --search_exp_dir.
-     python main_darts_found_ntu.py --search_exp_dir=<dir of search exp>
+     python main_darts_found_df.py --search_exp_dir=<dir of search exp>
+# Inference only
+ ## If you want to just run the test process (no training of the fusion network), you can also use this script, you need to assign both the searching and evaluation experiments directories.
+     python main_darts_found_df.py --search_exp_dir=<dir of search exp> --eval_exp_dir=<dir of eval exp>
+# Roc curve calculation:
+    python3 get_auc_val.py
+

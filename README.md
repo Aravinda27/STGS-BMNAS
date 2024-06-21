@@ -16,4 +16,6 @@
   ### Create a “label2.txt” file that contains the video name along with their actual labels.
 # Run Experiment:
  ## First, search the hypernets. You can use --parallel for data-parallel. The default setting will require about 128GB of GPU memory, you may adjust the --batch size according to gpu memory capacity.
-      python main_darts_searchable_ntu.py –parallel
+      python main_darts_searchable_df.py –parallel
+ ## Then train the searched fusion network. You need to assign the searching experiment by --search_exp_dir.
+     python main_darts_found_ntu.py --search_exp_dir=<dir of search exp>

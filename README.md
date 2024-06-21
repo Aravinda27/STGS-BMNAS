@@ -103,8 +103,6 @@ parameter λ = 10 and varying sampling values M</em>
   </table>
 </div>
 
-## Pre-trained models
-coming soon
 
 ## Pre-trained models
 coming soon

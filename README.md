@@ -107,6 +107,9 @@ parameter λ = 10 and varying sampling values M</em>
 ## Pre-trained models
 coming soon
 
+## Acknowledgments
+BMNAS(https://github.com/Somedaywilldo/BM-NAS)
+
 
 
 
